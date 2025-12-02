@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-light text-brand-text font-body antialiased transition-colors duration-300;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-heading text-brand-text dark:text-brand-light;
+}
+
+.section-subtitle {
+  @apply text-lg text-brand-text/80 dark:text-brand-light/80;
+}
+
+.card-base {
+  @apply bg-white dark:bg-brand-dark/70 border border-brand-muted/50 dark:border-brand-dark shadow-soft rounded-2xl;
+}
+
+.btn-primary {
+  @apply bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-primary/90 transition-colors shadow-soft;
+}
+
+.btn-secondary {
+  @apply bg-brand-secondary text-white px-4 py-2 rounded-full hover:bg-brand-secondary/90 transition-colors shadow-soft;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b68a60;
+  border-radius: 9999px;
+}
