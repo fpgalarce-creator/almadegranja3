@@ -1,0 +1,90 @@
+[
+  {
+    "id": "huevos-xl",
+    "name": "Huevos de campo XL",
+    "category": "Huevos",
+    "description": "Doce unidades frescas de gallinas libres, sabor auténtico del campo.",
+    "price": 6990,
+    "stock": 25,
+    "weight": "Docena",
+    "image": "https://images.unsplash.com/photo-1588165246474-cc2d5d1d3ab5?auto=format&fit=crop&w=800&q=80",
+    "featured": true
+  },
+  {
+    "id": "queso-mantecoso",
+    "name": "Queso Mantecoso",
+    "category": "Quesos",
+    "description": "Pieza de queso mantecoso artesanal, textura suave y cremosa.",
+    "price": 10990,
+    "stock": 12,
+    "weight": "500 g",
+    "image": "https://images.unsplash.com/photo-1612874472278-5c1f9b580686?auto=format&fit=crop&w=800&q=80",
+    "featured": true
+  },
+  {
+    "id": "miel-ulmo",
+    "name": "Miel de Ulmo",
+    "category": "Otros",
+    "description": "Miel pura de bosques nativos, sabor floral y aroma intenso.",
+    "price": 8490,
+    "stock": 18,
+    "weight": "750 g",
+    "image": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=800&q=80",
+    "featured": false
+  },
+  {
+    "id": "mix-frutos-secos",
+    "name": "Mix de frutos secos premium",
+    "category": "Frutos secos",
+    "description": "Mezcla de almendras, nueces y avellanas tostadas con sal de mar.",
+    "price": 7590,
+    "stock": 30,
+    "weight": "400 g",
+    "image": "https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=800&q=80",
+    "featured": true
+  },
+  {
+    "id": "mermelada-frambuesa",
+    "name": "Mermelada de frambuesa",
+    "category": "Otros",
+    "description": "Mermelada casera con trozos de fruta, endulzada suavemente.",
+    "price": 4290,
+    "stock": 20,
+    "weight": "350 g",
+    "image": "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=800&q=80",
+    "featured": false
+  },
+  {
+    "id": "queso-de-cabra",
+    "name": "Queso de cabra ahumado",
+    "category": "Quesos",
+    "description": "Queso de cabra madurado con delicado ahumado natural.",
+    "price": 12490,
+    "stock": 9,
+    "weight": "400 g",
+    "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+    "featured": false
+  },
+  {
+    "id": "huevos-araucanas",
+    "name": "Huevos azules Araucanas",
+    "category": "Huevos",
+    "description": "Docena de huevos de gallinas Araucanas, cáscara azul verdosa y sabor delicado.",
+    "price": 7990,
+    "stock": 6,
+    "weight": "Docena",
+    "image": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80",
+    "featured": false
+  },
+  {
+    "id": "nueces-cosecha",
+    "name": "Nueces cosecha nueva",
+    "category": "Frutos secos",
+    "description": "Nueces de la temporada recién peladas, ideal para repostería.",
+    "price": 6890,
+    "stock": 15,
+    "weight": "500 g",
+    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+    "featured": false
+  }
+]
