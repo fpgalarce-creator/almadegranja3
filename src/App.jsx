@@ -3,10 +3,12 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import SocialFloatingButtons from './components/SocialFloatingButtons';
 import CartDrawer from './components/CartDrawer';
+import ProtectedRoute from './components/ProtectedRoute';
 import About from './pages/About';
 import Admin from './pages/Admin';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Store from './pages/Store';
 
 const App = () => (
@@ -18,7 +20,15 @@ const App = () => (
         <Route path="/tienda" element={<Store />} />
         <Route path="/nosotros" element={<About />} />
         <Route path="/contacto" element={<Contact />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/ingresar" element={<Login />} />
+        <Route
+          path="/admin"
+          element={(
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          )}
+        />
       </Routes>
     </main>
     <Footer />
