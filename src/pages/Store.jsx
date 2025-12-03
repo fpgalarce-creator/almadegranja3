@@ -32,14 +32,21 @@ const Store = () => {
   }, [products, selectedCategory, sort]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 space-y-6">
+    <div className="max-w-7xl mx-auto px-4 py-10 space-y-6 lg:space-y-8">
       <div className="space-y-2">
         <h1 className="section-title">Selecciona tus productos favoritos por categoría</h1>
         <p className="section-subtitle">Filtra, ordena y arma tu pedido en segundos.</p>
       </div>
 
-      <CategoryFilter categories={categories} selected={selectedCategory} onSelect={setSelectedCategory} />
-      <SortBar value={sort} onChange={setSort} />
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+        <div className="flex-1">
+          <CategoryFilter categories={categories} selected={selectedCategory} onSelect={setSelectedCategory} />
+        </div>
+        <div className="mt-2 lg:mt-0 flex-shrink-0">
+          <SortBar value={sort} onChange={setSort} />
+        </div>
+      </div>
+
       <ProductList products={filtered} />
     </div>
   );
