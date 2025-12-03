@@ -15,7 +15,7 @@ const Home = () => {
       <section className="max-w-6xl mx-auto px-4 pt-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <p className="text-sm uppercase tracking-[0.2em] text-brand-text/70 dark:text-brand-light/70">Alma de Granja</p>
-          <h1 className="text-4xl md:text-5xl font-heading text-brand-text dark:text-brand-light leading-tight">
+          <h1 className="text-4xl md:text-5xl font-display text-brand-text dark:text-brand-light leading-tight">
             El alma del campo en tu mesa.
           </h1>
           <p className="text-lg text-brand-text/80 dark:text-brand-light/80">
@@ -52,7 +52,14 @@ const Home = () => {
             <h2 className="section-title">¿Cómo funciona?</h2>
             <p className="section-subtitle">3 pasos para que disfrutes los mejores sabores de campo.</p>
           </div>
-          <Link to="/contacto" className="btn-secondary">Coordinar por WhatsApp</Link>
+          <a
+            href={`https://wa.me/56958086762?text=${encodeURIComponent('Hola, me gustaría coordinar un pedido con Alma de Granja.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            Coordinar por WhatsApp
+          </a>
         </div>
         <HowItWorks />
       </section>
@@ -70,19 +77,19 @@ const Home = () => {
 
       <section className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
         <div className="md:col-span-1 card-base p-6 space-y-2">
-          <h3 className="text-2xl font-heading text-brand-text dark:text-brand-light">Conversemos</h3>
+          <h3 className="text-2xl font-display text-brand-text dark:text-brand-light">Conversemos</h3>
           <p className="text-brand-text/80 dark:text-brand-light/80">
             Escríbenos para coordinar pedidos especiales, eventos o suscripciones.
           </p>
           <div className="space-y-2 text-sm text-brand-text dark:text-brand-light">
-            <p>📧 correo@almadegranja.cl</p>
-            <p>📞 +56 9 1234 5678</p>
+            <p>📧 f.pgalarce@gmail.com</p>
+            <p>📞 +56 9 5808 6762</p>
             <p>🕑 Lunes a sábado, 09:00 - 19:00 hrs.</p>
           </div>
           <a
-            href="https://wa.me/56912345678"
+            href={`https://wa.me/56958086762?text=${encodeURIComponent('Hola, me gustaría coordinar un pedido con Alma de Granja.')}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn-secondary inline-block text-center w-full"
           >
             Escribir por WhatsApp

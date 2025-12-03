@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Menu, ShoppingCart, X } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import DarkModeToggle from './DarkModeToggle';
 
 const navItems = [
@@ -12,19 +13,32 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { totals, toggleCart } = useCart();
+  const { isAuthenticated, user, logout } = useAuth();
   const [open, setOpen] = useState(false);
+
+  const handleLoginClick = () => {
+    navigate('/ingresar');
+    setOpen(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+    setOpen(false);
+  };
 
   return (
     <header className="bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md sticky top-0 z-30 border-b border-brand-muted/40 dark:border-brand-dark">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-heading text-xl shadow-soft">
+          <div className="w-10 h-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-display text-xl shadow-soft">
             AG
           </div>
           <div>
-            <p className="text-lg font-heading text-brand-text dark:text-brand-light">Alma de Granja</p>
-            <p className="text-xs text-brand-text/70 dark:text-brand-light/70">Origen rural, calidad premium</p>
+            <p className="text-lg font-display text-brand-text dark:text-brand-light logo-text">Alma de Granja</p>
+            <p className="text-xs text-brand-text/70 dark:text-brand-light/70 font-body">Origen rural, calidad premium</p>
           </div>
         </Link>
 
@@ -42,13 +56,27 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <button
-            type="button"
-            className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
-          >
-            Ingresar
-          </button>
+        <div className="hidden md:flex items-center gap-3 text-sm">
+          {isAuthenticated ? (
+            <div className="flex items-center gap-3">
+              <span className="text-brand-text dark:text-brand-light font-display">Hola, {user?.role === 'admin' ? 'Admin' : user?.email}</span>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
+              >
+                Cerrar sesión
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={handleLoginClick}
+              className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
+            >
+              Ingresar
+            </button>
+          )}
           <button
             type="button"
             onClick={toggleCart}
@@ -91,12 +119,23 @@ const Navbar = () => {
             ))}
           </nav>
           <div className="flex items-center justify-between gap-3">
-            <button
-              type="button"
-              className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
-            >
-              Ingresar
-            </button>
+            {isAuthenticated ? (
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
+              >
+                Cerrar sesión
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={handleLoginClick}
+                className="px-4 py-2 rounded-full border border-brand-muted/60 dark:border-brand-muted/30 text-brand-text dark:text-brand-light hover:border-brand-primary"
+              >
+                Ingresar
+              </button>
+            )}
             <button
               type="button"
               onClick={() => {

@@ -10,19 +10,19 @@ const Contact = () => (
 
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
       <div className="card-base p-6 space-y-3">
-        <h2 className="text-2xl font-heading text-brand-text dark:text-brand-light">Canales de contacto</h2>
+        <h2 className="text-2xl font-display text-brand-text dark:text-brand-light">Canales de contacto</h2>
         <p className="text-brand-text/80 dark:text-brand-light/80">
           Escríbenos por el canal que prefieras y coordinamos rápidamente.
         </p>
         <ul className="space-y-2 text-sm text-brand-text dark:text-brand-light">
-          <li>📧 correo@almadegranja.cl</li>
-          <li>📞 +56 9 1234 5678</li>
+          <li>📧 f.pgalarce@gmail.com</li>
+          <li>📞 +56 9 5808 6762</li>
           <li>🕑 Lunes a sábado, 09:00 - 19:00 hrs</li>
         </ul>
         <a
-          href="https://wa.me/56912345678"
+          href={`https://wa.me/56958086762?text=${encodeURIComponent('Hola, me gustaría coordinar un pedido con Alma de Granja.')}`}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="btn-primary inline-block text-center"
         >
           Escribir por WhatsApp

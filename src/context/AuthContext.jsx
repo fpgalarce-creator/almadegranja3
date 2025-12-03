@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     }
   }, [user]);
 
-  const login = ({ email, password }) => {
+  const login = (email, password) => {
     if (email === ADMIN_USER.email && password === ADMIN_USER.password) {
       setUser({ email, role: 'admin' });
       return { success: true };
@@ -32,7 +32,18 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => setUser(null);
 
-  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated: Boolean(user),
+        login,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export const useAuth = () => useContext(AuthContext);

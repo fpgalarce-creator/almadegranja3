@@ -21,8 +21,8 @@ export default {
         soft: '0 10px 35px rgba(0,0,0,0.08)',
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'serif'],
-        body: ['"Inter"', 'system-ui', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
+        body: ['"Montserrat"', 'sans-serif'],
       },
     },
   },

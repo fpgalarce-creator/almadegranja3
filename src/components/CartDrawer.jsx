@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { formatWhatsAppMessage } from '../utils/whatsappFormatter';
 
 const CartDrawer = () => {
   const { items, totals, isCartOpen, closeCart, updateQuantity, removeItem, customer, setCustomer, clearCart } = useCart();
-  const [phone] = useState('+56912345678');
+  const phone = '+56958086762';
 
   const handleCheckout = () => {
     if (!items.length) return;
@@ -20,7 +19,7 @@ const CartDrawer = () => {
     >
       <div className="flex items-center justify-between px-5 py-4 border-b border-brand-muted/50 dark:border-brand-dark">
         <div>
-          <p className="text-lg font-heading text-brand-text dark:text-brand-light">Tu carrito</p>
+          <p className="text-lg font-display text-brand-text dark:text-brand-light">Tu carrito</p>
           <p className="text-sm text-brand-text/70 dark:text-brand-light/70">{items.length} productos seleccionados</p>
         </div>
         <button

@@ -20,7 +20,7 @@ const About = () => (
 
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
       <div className="card-base p-6 space-y-3">
-        <h2 className="text-2xl font-heading text-brand-text dark:text-brand-light">Storytelling</h2>
+        <h2 className="text-2xl font-display text-brand-text dark:text-brand-light">Storytelling</h2>
         <p className="text-brand-text/80 dark:text-brand-light/80">
           Desde los primeros repartos a vecinos hasta la logística actual, mantenemos la misma promesa: productos nobles que
           respetan el trabajo de cada productor. Hoy combinamos tradición con procesos modernos para que recibas en casa la
@@ -28,7 +28,7 @@ const About = () => (
         </p>
       </div>
       <div className="card-base p-6 space-y-4">
-        <h2 className="text-2xl font-heading text-brand-text dark:text-brand-light">Línea de tiempo</h2>
+        <h2 className="text-2xl font-display text-brand-text dark:text-brand-light">Línea de tiempo</h2>
         <div className="relative pl-6 border-l border-brand-muted/60 dark:border-brand-dark space-y-4">
           {milestones.map((item) => (
             <div key={item.year} className="relative">
@@ -46,7 +46,7 @@ const About = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {values.map((value) => (
           <div key={value.title} className="card-base p-5 space-y-2">
-            <h3 className="text-xl font-heading text-brand-text dark:text-brand-light">{value.title}</h3>
+            <h3 className="text-xl font-display text-brand-text dark:text-brand-light">{value.title}</h3>
             <p className="text-sm text-brand-text/80 dark:text-brand-light/80">{value.description}</p>
           </div>
         ))}
