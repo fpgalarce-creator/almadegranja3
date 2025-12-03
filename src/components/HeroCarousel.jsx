@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react';
 
 const slides = [
-  'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+  {
+    src: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Huevos frescos de campo en bandeja rústica',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1546961329-78bef0414d7c?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Tabla rústica con quesos artesanales variados',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1506368083636-6defb67639ab?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Cesta rural con frutos secos y pan casero',
+  },
 ];
 
 const HeroCarousel = () => {
@@ -19,9 +27,9 @@ const HeroCarousel = () => {
     <div className="relative overflow-hidden rounded-3xl shadow-soft h-64 sm:h-80">
       {slides.map((slide, index) => (
         <img
-          key={slide}
-          src={slide}
-          alt="Paisaje rural"
+          key={slide.src}
+          src={slide.src}
+          alt={slide.alt}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
             current === index ? 'opacity-100' : 'opacity-0'
           }`}
